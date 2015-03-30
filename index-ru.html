@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Социокнопки в природе</title>
+	<meta name="description" content="">
+    <meta name="keywords" content="">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<section id="content">
+		<article id="text">
+			<a href="https://github.com/Gurylev/socio/">Github</a>. <a href="index.html">In English</a>.
+			<h1>Социокнопки в природе</h1>
+			<p>Добавил в бложег 100500 социокнопок и доволен? Казнить!
+			<h2>Почему социокнопки это плохо?</h2>
+			<p>Каждая социокнопка...
+			<ul>
+				<li>позволяет соц. сетям следить за пользователями
+				<li>загружает по скрипту и по фрейму с документом
+				<li>замедляет загрузку ваших драгоценных страниц
+				<li>блокируется при помощи AdBlock пользователями
+				<li>вызывает ошибки в консоли браузера
+				<li>не позволяет документу пройти W3C-валидацию
+			</ul>
+			<h2>Избавься от социокнопок!</h2>
+			<p>Реализуй кнопки соц. сетей простыми ссылками. При щелчке по такой ссылке ты увидишь тот же резульат, что и после установки официальных социальных кнопок.
+		</article> 
+	</section>
+	<div class="social">
+	<a href="http://twitter.com/intent/tweet?url=http://gurylyov.github.io/socio/" class="tweet" target="_blank" title="Твитнуть сию страницу">Твитнуть</a>
+	<a href="http://vk.com/share.php?url=http://gurylyov.github.io/socio/" class="vk" target="_blank" title="Сохранить сию страницу вк">Сохранить</a>
+	<a href="http://www.facebook.com/sharer.php?u=http://gurylyov.github.io/socio/" class="fb" target="_blank" title="Отправть сию страницу в фб">Отправить</a>
+	<a href="https://plus.google.com/share?url=http://gurylyov.github.io/socio/" class="google" target="_blank" title="Рассказать о сей странице в Г+">Рассказать</a>
+	<a href="http://www.livejournal.com/update.bml?event=http://gurylyov.github.io/socio/" class="lj" target="_blank" title="Прожужжать весь ЖЖ сей страницею">Прожужжать</a>
+	</div>
+	</div>
+<script>
+document.onmousemove = function (c) {
+c = c || window.event;
+var b = c.target || c.srcElement;
+if (b.title || b.alt) {
+b.help = b.title || b.alt;
+b.title = b.alt = ""
+}
+if (b.help) {
+if (!document.getElementById("msg")) {
+a = document.createElement("div");
+a.style.cssText = "display:block;position:absolute;background:rgba(256,256,256,.5)";
+a.id = "msg";
+document.body.appendChild(a)
+}
+if (a.innerHTML != b.help) a.innerHTML = b.help;
+var d = document.documentElement,
+f = document.body;
+b =c.pageX||c.clientX + (d && d.scrollLeft || f && f.scrollLeft || 0) - (d.clientLeft || 0);
+d =c.pageY||c.clientY + (d && d.scrollTop || f && f.scrollTop || 0) - (d.clientTop  || 0);
+a.style.left = 15 + b + "px";
+a.style.top = 20 + d + "px";
+}
+else document.getElementById("msg") && document.body.removeChild(document.getElementById("msg"))
+}
+</script>
+</body>
+</html>
